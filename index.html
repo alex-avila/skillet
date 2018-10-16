@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <title>Skillet</title>
+</head>
+
+<body>
+    <main id="app">
+        <section class="health-bars">
+            <div class="health-bars__section">
+                <h2>YOU</h2>
+                <div class="health-bars__bar">
+                    <div class="health-bars__bar__bg"></div>
+                    <div class="health-bars__bar__indicator" :style="playerHealthBar"></div>
+                    <span class="health-bars__bar__score">{{ playerHealth }}</span>
+                </div>
+            </div>
+            <div class="health-bars__section">
+                <h2>MONSTER</h2>
+                <div class="health-bars__bar">
+                    <div class="health-bars__bar__bg"></div>
+                    <div class="health-bars__bar__indicator" :style="monsterHealthBar"></div>
+                    <span class="health-bars__bar__score">{{ monsterHealth }}</span>
+                </div>
+            </div>
+        </section>
+        <section class="controls">
+            <button @click="start" v-if="!isPlaying" class="blue-button">START NEW GAME</button>
+            <template v-else>
+                <button @click="attack" class="purple-button">ATTACK</button>
+                <button @click="specialAttack(isSpecialAttackActive)" :class="specialAttackClasses">
+                    SPECIAL ATTACK
+                </button>
+                <button @click="heal" class="green-button">HEAL</button>
+                <button @click="reset" class="red-button">GIVE UP</button>
+            </template>
+        </section>
+        <section class="attacks-list" v-if="actions.length">
+            <div v-for="action in actions" :class="['actions-text', action.class]">{{ action.message }}</div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
