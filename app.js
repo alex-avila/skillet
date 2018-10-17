@@ -26,7 +26,7 @@ const vm = new Vue({
   watch: {
     playerHealth: function() {
       if (this.playerHealth <= 0) {
-        if (confirm("You won. Play again?")) {
+        if (confirm("You lost :(. Play again?")) {
           this.reset();
           this.isPlaying = true;
         } else {
@@ -36,7 +36,7 @@ const vm = new Vue({
     },
     monsterHealth: function() {
       if (this.monsterHealth <= 0) {
-        if (confirm("You lost :(. Play again?")) {
+        if (confirm("You won. Play again?")) {
           this.reset();
           this.isPlaying = true;
         } else {
