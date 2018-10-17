@@ -51,7 +51,7 @@ const vm = new Vue({
     },
     attack: function() {
       const monsterDamage = this.calculateDamage(1, 15);
-      const yourDamange = this.calculateDamage(1, 15);
+      const yourDamange = this.calculateDamage(3, 17);
 
       this.monsterHealth -= monsterDamage;
       this.playerHealth -= yourDamange;
@@ -67,8 +67,8 @@ const vm = new Vue({
     specialAttack: function(enabled) {
       let monsterDamage, yourDamange;
       if (enabled && this.stamina) {
-        monsterDamage = this.calculateDamage(5, 20);
-        yourDamange = this.calculateDamage(1, 15);
+        monsterDamage = this.calculateDamage(10, 20);
+        yourDamange = this.calculateDamage(3, 17);
 
         this.monsterHealth -= monsterDamage;
         this.playerHealth -= yourDamange;
@@ -84,7 +84,7 @@ const vm = new Vue({
     },
     heal: function() {
       const yourHealing = this.calculateDamage(1, 15);
-      const yourDamange = this.calculateDamage(1, 15);
+      const yourDamange = this.calculateDamage(3, 17);
 
       this.playerHealth -= yourDamange;
       this.playerHealth += yourHealing;
