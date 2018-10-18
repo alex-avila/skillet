@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="app.css">
     <title>Skillet</title>
 </head>
-
 <body>
     <main id="app">
         <section class="health-bars">
@@ -30,19 +29,28 @@
             </div>
         </section>
         <section class="controls">
-            <button @click="start" v-if="!isPlaying" class="blue-button">START NEW GAME</button>
-            <template v-else>
-                <button @click="attack" class="purple-button">ATTACK</button>
-                <button @click="specialAttack(isSpecialAttackActive)" :class="specialAttackClasses">
-                    SPECIAL ATTACK
-                </button>
-                <button @click="heal" class="green-button">HEAL</button>
-                <button @click="reset" class="red-button">GIVE UP</button>
-            </template>
+            <transition name="fade" mode="out-in">
+                <div v-if="!isPlaying" key="start">
+                    <button @click="start" class="blue-button">START NEW GAME</button>
+                </div>
+                <div v-else key="fight">
+                    <button @click="attack" class="purple-button">ATTACK</button>
+                    <button @click="specialAttack(isSpecialAttackActive)" :class="specialAttackClasses">
+                        SPECIAL ATTACK
+                    </button>
+                    <button @click="heal" class="green-button">HEAL</button>
+                    <button @click="reset" class="red-button">GIVE UP</button>
+                </div>
+            </transition>
         </section>
-        <section class="attacks-list" v-if="actions.length">
-            <div v-for="action in actions" :class="['actions-text', action.class]">{{ action.message }}</div>
-        </section>
+        <transition name="fade">
+            <section class="attacks-list" v-if="actions.length">
+                <transition-group name="slide" tag="div" appear>
+                    <div v-for="(action, i) in actions" :class="['actions-text', action.class]" :key="action.id">{{
+                        action.message }}</div>
+                </transition-group>
+            </section>
+        </transition>
     </main>
     <script src="app.js"></script>
 </body>

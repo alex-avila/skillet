@@ -1,153 +1,204 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+    margin: 0;
 }
 
 body,
 button {
-  font-family: "Avenir";
+    font-family: 'Avenir';
 }
 
 button {
-  background: #fff;
-  border: none;
-  box-shadow: 0 1px 4px rgb(202, 202, 202);
-  font-size: 1em;
-  padding: 0.618em 1em;
-  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
-  cursor: pointer;
-  border-radius: 100px;
-  font-weight: 500;
-  outline: none;
+    background: #fff;
+    border: none;
+    box-shadow: 0 1px 4px rgb(202, 202, 202);
+    font-size: 1em;
+    padding: 0.618em 1em;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    cursor: pointer;
+    border-radius: 100px;
+    font-weight: 500;
+    outline: none;
 }
 
 button:hover {
-  box-shadow: 0 1px 10px rgb(190, 190, 190);
+    box-shadow: 0 1px 10px rgb(190, 190, 190);
 }
 
 button:focus {
-  box-shadow: 0 0 3pt 2pt rgb(152, 152, 255);
+    box-shadow: 0 0 3pt 2pt rgb(152, 152, 255);
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 700px;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
 }
 
 .health-bars {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0 0 2em 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 0 2em 0;
 }
 
 .health-bars__section {
-  text-align: center;
-  flex: 0 45%;
-  width: 100%;
+    text-align: center;
+    flex: 0 45%;
+    width: 100%;
 }
 
 .health-bars__bar {
-  height: 30px;
-  width: 100%;
-  border: 3px solid rgb(74, 133, 108);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: rgb(12, 63, 50);
-  position: relative;
-  border-radius: 100px;
-  overflow: hidden;
-  z-index: 1;
+    height: 30px;
+    width: 100%;
+    border: 3px solid rgb(74, 133, 108);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: rgb(12, 63, 50);
+    position: relative;
+    border-radius: 100px;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .health-bars__bar__bg,
 .health-bars__bar__indicator {
-  position: absolute;
-  left: 0;
-  height: 100%;
-  z-index: -1;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: -1;
 }
 
 .health-bars__bar__bg {
-  width: 100%;
-  background: ghostwhite;
+    width: 100%;
+    background: ghostwhite;
 }
 
 .health-bars__bar__indicator {
-  width: 100%;
-  background: linear-gradient(rgb(100, 255, 190), rgb(100, 255, 113));
-  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    width: 100%;
+    background: linear-gradient(rgb(100, 255, 190), rgb(100, 255, 113));
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 }
 
 .controls,
 .attacks-list {
-  width: 100%;
-  padding: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  box-shadow: 0 2px 4px rgb(211, 211, 211);
-  margin: 0 0 2em;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 2px 4px rgb(211, 211, 211);
+    margin: 0 0 2em;
+}
+
+.controls div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .attacks-list {
-  flex-direction: column;
+    flex-direction: column;
+}
+
+.attacks-list > div {
+    width: 100%;
 }
 
 .orange-button {
-  background: linear-gradient(150deg, #ffeaa7, #fdcb6e);
+    background: linear-gradient(150deg, #ffeaa7, #fdcb6e);
 }
 
 .green-button {
-  background: linear-gradient(150deg, #55efc4, #00b894);
+    background: linear-gradient(150deg, #55efc4, #00b894);
 }
 
 .purple-button {
-  background: linear-gradient(150deg, #a29bfe, #887ce2);
+    background: linear-gradient(150deg, #a29bfe, #887ce2);
 }
 
 .blue-button {
-  background: linear-gradient(150deg, #74b9ff, #0984e3);
+    background: linear-gradient(150deg, #74b9ff, #0984e3);
 }
 
 .red-button {
-  background: linear-gradient(150deg, #fab1a0, #e17055);
+    background: linear-gradient(150deg, #fab1a0, #e17055);
 }
 
 .disabled {
-  background: rgb(185, 185, 185);
-  box-shadow: 0 1px 4px rgb(202, 202, 202);
-  outline: none;
+    background: rgb(185, 185, 185);
+    box-shadow: 0 1px 4px rgb(202, 202, 202);
+    outline: none;
 }
 
 .disabled:hover {
-  box-shadow: 0 1px 4px rgb(202, 202, 202);
+    box-shadow: 0 1px 4px rgb(202, 202, 202);
 }
 
 .actions-text {
-  text-align: center;
-  width: 100%;
-  margin: 5px;
-  font-weight: 500;
-  border-radius: 100px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  padding: 0.25em 0 0.2em;
+    text-align: center;
+    width: 100%;
+    margin: 5px;
+    font-weight: 500;
+    border-radius: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.25em 0 0.2em;
 }
 
 .your-action-text {
-  background: lightblue;
-  color: #104361;
+    background: lightblue;
+    color: #104361;
 }
 
 .monster-action-text {
-  background: lightcoral;
-  color: rgb(73, 9, 22);
+    background: lightcoral;
+    color: rgb(73, 9, 22);
+}
+
+.slide-enter-active {
+    animation: slide-in 0.5s ease-out forwards;
+}
+
+.slide-move {
+    transition: transform 0.5s;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(10px);
+        opacity: 0;
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.25s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
 }
