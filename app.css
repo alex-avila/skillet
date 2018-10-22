@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    background: rgb(248, 248, 248);
 }
 
 body,
@@ -92,6 +93,8 @@ button:focus {
     width: 100%;
     padding: 1em;
     display: flex;
+    background: #fff;
+    border-radius: 10px;
     align-items: center;
     justify-content: space-evenly;
     box-shadow: 0 2px 4px rgb(211, 211, 211);
